@@ -473,7 +473,9 @@ class DrawGraph {
       }
       add_response_for_xyz_step_size() {
         this.slider.onValueChangedObservable.add((value: any) => {
-          this.playStepSizeSliderMotionSound();
+          if (!this.reset) {
+            this.playStepSizeSliderMotionSound();
+          }
           this.set_slider_value(value);
           this.set_xyz_step_size(this.value);
         });
@@ -488,7 +490,9 @@ class DrawGraph {
 
       add_response_for_shape() {
         this.slider.onValueChangedObservable.add((value: any) => {
-          this.playGraphSliderMotionSound();
+          if (!this.reset) {
+            this.playGraphSliderMotionSound();
+          }
           this.set_slider_value(value);
           redraw_mindemo_3D();
         });
@@ -512,7 +516,9 @@ class DrawGraph {
       }
       add_response_for_background() {
         this.slider.onValueChangedObservable.add((value: any) => {
-          this.playGraphSliderMotionSound();
+          if (!this.reset) {
+            this.playGraphSliderMotionSound();
+          }
           this.set_slider_value(value);
           this.set_background(this.value);
         });
@@ -557,7 +563,9 @@ class DrawGraph {
       }
       add_response_for_material_params() {
         this.slider.onValueChangedObservable.add((value: any) => {
-          this.playGraphSliderMotionSound();
+          if (!this.reset) {
+            this.playGraphSliderMotionSound();
+          }
           this.set_slider_value(value);
           this.set_material_params();
         });
@@ -2103,7 +2111,7 @@ class DrawGraph {
         });
     }
 
-    function load_param_from_csv_txt(key: string, value: number) {
+    function load_params_from_csv_txt(key: string, value: number) {
       switch (key) {
         case "uniformity":
           marginal_density_uniformity.set_slider_value(value);
@@ -2224,6 +2232,30 @@ class DrawGraph {
             for (var i = 0; i < data_string.length; i++) {
               data_array[i] = data_string[i].split(",");
             }
+            marginal_density_uniformity.reset = true;
+            density_param_xy.reset = true;
+            density_param_xz.reset = true;
+            // density_param_yz.reset = true;
+            density_param_xxy.reset = true;
+            density_param_xxz.reset = true;
+            // density_param_xyy.reset = true;
+            density_param_xyz.reset = true;
+            // density_param_xzz.reset = true;
+            // density_param_yyz.reset = true;
+            // density_param_yzz.reset = true;
+            density_param_abs_x_y_z.reset = true;
+            density_param_abs_xy_yz_zx.reset = true;
+            density_param_abs_xyz.reset = true;
+            density_param_sin_amp.reset = true;
+            density_param_sin_freq.reset = true;
+            density_param_sin_phase.reset = true;
+            xyz_step_size.reset = true;
+            scaling.reset = true;
+            shape.reset = true;
+            background.reset = true;
+            hue.reset = true;
+            opacity.reset = true;
+            lighting.reset = true;
             resolve(data_array);
           });
         })
@@ -2262,7 +2294,7 @@ class DrawGraph {
                   if (elements[6].length > 0) {
                     if (elements[7] != null) {
                       if (elements[7].length > 0) {
-                        load_param_from_csv_txt( elements[6].toString(), Number(elements[7]) ) ;
+                        load_params_from_csv_txt( elements[6].toString(), Number(elements[7]) ) ;
                       }
                     }
                   }
@@ -2382,6 +2414,30 @@ class DrawGraph {
                 );
               }
             }
+            marginal_density_uniformity.reset = false;
+            density_param_xy.reset = false;
+            density_param_xz.reset = false;
+            // density_param_yz.reset = false;
+            density_param_xxy.reset = false;
+            density_param_xxz.reset = false;
+            // density_param_xyy.reset = false;
+            density_param_xyz.reset = false;
+            // density_param_xzz.reset = false;
+            // density_param_yyz.reset = false;
+            // density_param_yzz.reset = false;
+            density_param_abs_x_y_z.reset = false;
+            density_param_abs_xy_yz_zx.reset = false;
+            density_param_abs_xyz.reset = false;
+            density_param_sin_amp.reset = false;
+            density_param_sin_freq.reset = false;
+            density_param_sin_phase.reset = false;
+            xyz_step_size.reset = false;
+            scaling.reset = false;
+            shape.reset = false;
+            background.reset = false;
+            hue.reset = false;
+            opacity.reset = false;
+            lighting.reset = false;
             // create_mindemo_3D_data_table(mindemo_3D_data);
             resolve(true);
           });
@@ -2536,6 +2592,13 @@ class DrawGraph {
       density_param_sin_amp.reset = false;
       density_param_sin_freq.reset = false;
       density_param_sin_phase.reset = false;
+      xyz_step_size.reset = false;
+      scaling.reset = false;
+      shape.reset = false;
+      background.reset = false;
+      hue.reset = false;
+      opacity.reset = false;
+      lighting.reset = false;
     }
     reset_button.onPointerClickObservable.add((event) => {
       playButtonClickSound();
@@ -2568,6 +2631,7 @@ class DrawGraph {
           "load",
           (event) => {
             draw_mindemo_3D_from_csv_file(reader.result, true);
+            playButtonClickSound();
           },
           true
         );
