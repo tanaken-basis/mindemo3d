@@ -41,7 +41,7 @@ npm start
 Mindemo stands for [“Minimum Information Dependence Model”](https://github.com/kyanostat/min-info). It is a highly flexible model capable of handling various interactions. In this program, we calculate probability functions using the Sinkhorn-Knopp algorithm for optimal transport based on the descriptions in the [Minimum Information Dependence Model](https://arxiv.org/abs/2206.06792) paper. For models with dimensions higher than three, we implement the Sinkhorn-Knopp algorithm for multi-marginal optimal transport. Keep in mind that running the Sinkhorn-Knopp algorithm for parameter updates can be computationally intensive. Additionally, setting the step size too small may lead to convergence issues.
 
 ## About Mindemo2D
-We’ve also prepared a Python program called [Mindemo2D](https://tanaken-basis.github.io/mindemo2d/) that visualizes a two-dimensional probability distribution constructed using the [Minimum Information Dependence Model](https://arxiv.org/abs/2206.06792). This version allows for more detailed parameter settings related to the probability distribution. 
+We’ve also prepared a Python program called [Mindemo2D](https://github.com/tanaken-basis/mindemo2d) that visualizes a two-dimensional probability distribution constructed using the [Minimum Information Dependence Model](https://arxiv.org/abs/2206.06792). This version allows for more detailed parameter settings related to the probability distribution. 
 
 ## Libraries Used
 This program utilizes Babylon.js for three-dimensional rendering and Tone.js for generating and playing audio effects.

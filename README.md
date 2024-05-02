@@ -49,7 +49,7 @@ Mindemoは、[最小情報従属モデル(Minimum Information Dependence Model)]
 
 ## Mindemo2Dについて
 
-[最小情報従属モデル](https://arxiv.org/abs/2206.06792)を用いて構成した2次元の確率分布を可視化する[Mindemo2D](https://tanaken-basis.github.io/mindemo2d/)という名前のPythonのプログラムを[こちら](https://tanaken-basis.github.io/mindemo2d/)に用意しています。確率分布のパラメータについては、こちらのほうがより細かく設定できます。
+[最小情報従属モデル](https://arxiv.org/abs/2206.06792)を用いて構成した2次元の確率分布を可視化する[Mindemo2D](https://github.com/tanaken-basis/mindemo2d)という名前のPythonのプログラムを[こちら](https://github.com/tanaken-basis/mindemo2d)に用意しています。確率分布のパラメータについては、こちらのほうがより細かく設定できます。
 
 ## ライブラリーについて
 
