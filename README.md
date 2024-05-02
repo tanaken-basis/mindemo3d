@@ -4,13 +4,13 @@
 
 ## 概要
 
-[最小情報従属モデル](https://arxiv.org/abs/2206.06792)を用いて構成した3次元の確率分布を可視化するプログラムです。
+[最小情報従属モデル](https://arxiv.org/abs/2206.06792)(Mindemo)を用いて構成した3次元の確率分布を可視化するプログラムです。
 
 ## プログラムの使用例
 
 [プログラムの使用例](https://tanaken-basis.github.io/mindemo3d/)をご覧ください。
 
-![example of mindemo3d](mindemo3d_example.gif)
+![example of mindemo3d](img/mindemo3d_example.gif)
 
 ## インストールと実行方法
 
@@ -57,9 +57,9 @@ Mindemoは、[最小情報従属モデル(Minimum Information Dependence Model)]
 
 ## ギャラリー
 
-![example of mindemo3d](mindemo3d_1.png)
-![example of mindemo3d](mindemo3d_2.png)
-![example of mindemo3d](mindemo3d_3.png)
-![example of mindemo3d](mindemo3d_4.png)
-![example of mindemo3d](mindemo3d_5.png)
-![example of mindemo3d](mindemo3d_6.png)
+![example of mindemo3d](img/mindemo3d_1.png)
+![example of mindemo3d](img/mindemo3d_2.png)
+![example of mindemo3d](img/mindemo3d_3.png)
+![example of mindemo3d](img/mindemo3d_4.png)
+![example of mindemo3d](img/mindemo3d_5.png)
+![example of mindemo3d](img/mindemo3d_6.png)

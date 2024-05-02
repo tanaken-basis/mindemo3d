@@ -8,7 +8,7 @@ This program visualizes a three-dimensional probability distribution constructed
 ## Example of Program Usage
 Check out the [example of program usage](https://tanaken-basis.github.io/mindemo3d/) to see how it works.
 
-![example of mindemo3d](mindemo3d_example.gif)
+![example of mindemo3d](img/mindemo3d_example.gif)
 
 ## Installation and Execution
 
@@ -48,9 +48,9 @@ This program utilizes Babylon.js for three-dimensional rendering and Tone.js for
 
 ## Gallery
 
-![example of mindemo3d](mindemo3d_1.png)
-![example of mindemo3d](mindemo3d_2.png)
-![example of mindemo3d](mindemo3d_3.png)
-![example of mindemo3d](mindemo3d_4.png)
-![example of mindemo3d](mindemo3d_5.png)
-![example of mindemo3d](mindemo3d_6.png)
+![example of mindemo3d](img/mindemo3d_1.png)
+![example of mindemo3d](img/mindemo3d_2.png)
+![example of mindemo3d](img/mindemo3d_3.png)
+![example of mindemo3d](img/mindemo3d_4.png)
+![example of mindemo3d](img/mindemo3d_5.png)
+![example of mindemo3d](img/mindemo3d_6.png)
