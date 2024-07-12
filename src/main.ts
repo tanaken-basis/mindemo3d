@@ -57,7 +57,8 @@ class DrawGraph {
       Vector3.Zero(),
       scene
     );
-    camera.attachControl(canvas, true);
+    // camera.attachControl(canvas, true);
+    camera.detachControl();
     camera.wheelPrecision = 50.0;
     var camera_pos_x = 1;
     var camera_pos_y = 3;
@@ -2934,6 +2935,43 @@ class DrawGraph {
     scanning_slider_panel.addControl(r_lower_limit.slider);
     scanning_slider_panel.addControl(r_upper_limit.header);
     scanning_slider_panel.addControl(r_upper_limit.slider);
+
+    //// start_panel
+    var start_panel = new StackPanel();
+    start_panel.width = "1280px";
+    start_panel.height = "720px";
+    start_panel.background = "black";
+    start_panel.alpha = 0.75;
+    start_panel.horizontalAlignment = Control.HORIZONTAL_ALIGNMENT_CENTER;
+    start_panel.verticalAlignment = Control.VERTICAL_ALIGNMENT_CENTER;
+    advancedTexture.addControl(start_panel);
+    //// start_button
+    var start_button = Button.CreateSimpleButton(
+      "Start",
+      "Press Space Key to Start"
+    );
+    start_button.width = "600px";
+    start_button.height = "400px";
+    start_button.color = "black";
+    start_button.paddingLeft = "0px";
+    start_button.paddingTop = "320px";
+    start_button.background = "white";
+    start_button.alpha = 0.75;
+    start_button.fontSize = 24;
+    start_button.fontWeight = "bold";
+    start_panel.addControl(start_button);
+    start_button.onPointerClickObservable.add((event) => {
+      playButtonClickSound();
+      start_panel.removeControl(start_button);
+      advancedTexture.removeControl(start_panel);
+      camera.attachControl(canvas, true);
+    });
+    document.addEventListener("keydown", (event) => {
+      playButtonClickSound();
+      start_panel.removeControl(start_button);
+      advancedTexture.removeControl(start_panel);
+      camera.attachControl(canvas, true);
+    });
 
     //// run the main render loop
     var sensitivity: number = 0.2;
