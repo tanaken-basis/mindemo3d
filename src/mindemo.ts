@@ -43,8 +43,8 @@ export function gen_mindemo_3D_data(
     mindemo_3D_params_dict: {key?: string;},
     mindemo_3D_step_size: number):
     [Array<number>, number, Array<number>, number, Array<Array<number>>, Array<Array<number>>] {
-    var xyz_min = -1;
-    var xyz_max = 1;
+    var xyz_min = -1.00000001;
+    var xyz_max = 1.00000001;
     var xyz_origin = (xyz_min + xyz_max)/2;
     var x_ndarray: Array<number> = [xyz_origin];
     var y_ndarray: Array<number> = [xyz_origin];

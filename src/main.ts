@@ -2009,7 +2009,9 @@ class DrawGraph {
                 }
               }
             });
-            flag_header = true;
+            // flag_header = true;
+            flag_header = false;
+            console.log(mindemo_3D_data.length);
             mindemo_3D_data.forEach((elements) => {
               if (flag_header) {
                 flag_header = false;
@@ -2072,6 +2074,7 @@ class DrawGraph {
         })
         .then(() => {
           return new Promise((resolve) => {
+            console.log(box_mesh_list.length);
             if (shape.value == 0) {
               for (var i = 0; i < box_mesh_list.length; i++) {
                 box_mesh_list[i].mesh = set_box_visibility(
@@ -2304,7 +2307,8 @@ class DrawGraph {
             });
             gen_materials(materials_num);
             mindemo_3D_data = [];
-            flag_header = true;
+            // flag_header = true;
+            flag_header = false;
             data_array.forEach((elements) => {
               if (flag_header) {
                 flag_header = false;
