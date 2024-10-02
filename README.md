@@ -4,7 +4,7 @@
 
 ## 概要
 
-[最小情報従属モデル](https://arxiv.org/abs/2206.06792)(Mindemo)を用いて構成した3次元の確率分布を可視化するプログラムです。
+[最小情報従属モデル](https://arxiv.org/abs/2206.06792)(Minimum Information Dependence Model を略してMindemo, 詳細は[arXiv](https://arxiv.org/abs/2206.06792)と[GitHub](https://github.com/kyanostat/min-info)をご参照ください)を用いて構成した3次元の確率分布を可視化するプログラムです。
 
 ## プログラムの使用例
 
@@ -23,11 +23,11 @@ Webアプリは、以下の画像のように、確率関数を描画する部�
 [![description of mindemo3d](img/mindemo3d_jp.png)](https://tanaken-basis.github.io/mindemo3d/)
 
 - i) : 確率関数を描画する部分<br />
-  3次元の場合の[最小情報従属モデル](https://arxiv.org/abs/2206.06792)(Mindemo)により生成される確率関数を描画します。
-  $ -1 \leq x, y, z \leq 1 $ の範囲で、 iv) で設定したグリッド幅で３次元空間を分割して、それぞれの位置の確率関数の値を計算しています。
+  3次元の場合の Mindemo ([arXiv](https://arxiv.org/abs/2206.06792), [GitHub](https://github.com/kyanostat/min-info)) により生成される確率関数を描画します。
+  $`-1 \leq x, y, z \leq 1`$ の範囲で、 iv) で設定したグリッド幅で３次元空間を分割して、それぞれの位置の確率関数の値を計算しています。
   確率関数の値が大きいグリッドほど、そこのオブジェクト(立方体など)の大きさが大きくなり、不透明度も高くなります。
   また、確率関数の値に応じてオブジェクトの色も変化します。
-  なお、$x$軸は赤い矢印、$y$軸は緑の矢印、$z$軸は青い矢印で表されています。
+  なお、$`x`$軸は赤い矢印、$`y`$軸は緑の矢印、$`z`$軸は青い矢印で表されています。
 
   以下の操作でカメラの回転, 拡大・縮小, 平行移動ができます。 
     - 回転: マウスの左ボタンを押しながらマウスを動かす。
@@ -38,48 +38,48 @@ Webアプリは、以下の画像のように、確率関数を描画する部�
 
 - ii) - iii) : 確率関数の設定をするスライダー<br />
 
-  3次元の場合の[最小情報従属モデル](https://arxiv.org/abs/2206.06792)(Mindemo)は、一般的には、
+  3次元の場合の Mindemo ([arXiv](https://arxiv.org/abs/2206.06792), [GitHub](https://github.com/kyanostat/min-info)) は、一般的には、
 
-  $p(x, y, z; \theta, \nu) =
-  \exp\{\theta^{\top}h(x,y,z)
+  $$p(x, y, z; \theta, \nu) =
+  \exp{\left\{\theta^{\top}h(x,y,z)
   -(a_{x}(x;\theta,\nu)+a_{y}(y;\theta,\nu)+a_{z}(z;\theta,\nu))
-  -\psi(\theta,\nu)\}
-  \cdot r_{x}(x;\nu) \cdot r_{y}(y;\nu) \cdot r_{z}(z;\nu)$
+  -\psi(\theta,\nu)\right\}}
+  \cdot r_{x}(x;\nu) \cdot r_{y}(y;\nu) \cdot r_{z}(z;\nu)$$
   
   のように表されます。
-  これらの項の中で、$a_{x}(x;\theta,\nu)$, $a_{y}(y;\theta,\nu)$, $a_{z}(z;\theta,\nu)$ と $\psi(\theta,\nu)$ は、基本的に、自動的に決定される部分になります。そのため、
-  $\theta^{\top}h(x,y,z)$
+  これらの項の中で、$`a_{x}(x;\theta,\nu)`$, $`a_{y}(y;\theta,\nu)`$, $`a_{z}(z;\theta,\nu)`$ と $`\psi(\theta,\nu)`$ は、基本的に、自動的に決定される部分になります。そのため、
+  $`\theta^{\top}h(x,y,z)`$
   と
-  $r_{x}(x;\nu)$, $r_{y}(y;\nu)$, $r_{z}(z;\nu)$
+  $`r_{x}(x;\nu)`$, $`r_{y}(y;\nu)`$, $`r_{z}(z;\nu)`$
   を設定すれば、確率分布が決まることになります。
 
-  まず、$r_{x}(x;\nu)$, $r_{y}(y;\nu)$, $r_{z}(z;\nu)$ の部分は、周辺分布を表しており、基本的にはどんな確率分布でもOKです。このWebアプリでは、一様分布と正規分布(-1から1までの範囲で正規分布(平均は大体0くらい, 分散は大体0.29くらい)を離散化したもの)の混合分布を設定できるようにしています。ii)のスライダーでその混合比を設定しています。
+  まず、$`r_{x}(x;\nu`)$, $`r_{y}(y;\nu)`$, $`r_{z}(z;\nu)`$ の部分は、周辺分布を表しており、基本的にはどんな確率分布でもOKです。このWebアプリでは、一様分布と正規分布(-1から1までの範囲で正規分布(平均は大体0くらい, 分散は大体0.29くらい)を離散化したもの)の混合分布を設定できるようにしています。ii)のスライダーでその混合比を設定しています。
 
   ![mixing ratio](img/mixing_ratio.gif)
 
   スライダーの値などは、キーボードでも操作できます。
   例えば、Uniformityのところに書いてある [a, A] は、aを押すとスライダーの値が小さくなり、Aを押すとスライダーの値が大きくなる、ということを表します。
 
-  iii)のスライダーでは、$\theta^{\top}h(x,y,z)$ の部分を設定できるようにしています。$\theta^{\top}h(x,y,z)$は、交互作用を表現することができる部分です。
+  iii)のスライダーでは、$`\theta^{\top}h(x,y,z)`$ の部分を設定できるようにしています。$`\theta^{\top}h(x,y,z)`$は、交互作用を表現することができる部分です。
 
-  例えば、“xy” のスライダーは、 $\theta^{\top}h(x,y,z)$ の中に $\theta_{xy} \cdot x y$ という $x$ と $y$ の交互作用があるとして、 $\theta_{xy}$ の値を設定しています。
-  周辺分布が一様分布という制約がある場合には、$\theta_{xy}$の値を大きくすると、 $x=y$ の領域付近に確率が集中します。
+  例えば、“xy” のスライダーは、 $`\theta^{\top}h(x,y,z)`$ の中に $`\theta_{xy} \cdot x y`$ という $`x`$ と $`y`$ の交互作用があるとして、 $`\theta_{xy}`$ の値を設定しています。
+  周辺分布が一様分布という制約がある場合には、$`\theta_{xy}`$の値を大きくすると、 $`x=y`$ の領域付近に確率が集中します。
 
   ![xy](img/xy.png)
 
   ![xy](img/xy.gif)
 
-  “|xyz|” のスライダーは、 $\theta^{\top}h(x,y,z)$ の中に $\theta_{|xyz|} \cdot |x y z|$ という交互作用があるとして、 $\theta_{|xyz|}$ の値を設定しています。
-  周辺分布が一様分布という制約がある場合には、$\theta_{|xyz|}$の値を大きくすると、 $|x|=|y|=|z|$ の領域付近に確率が集中します。
+  “|xyz|” のスライダーは、 $`\theta^{\top}h(x,y,z)`$ の中に $`\theta_{|xyz|} \cdot |x y z|`$ という交互作用があるとして、 $`\theta_{|xyz|}`$ の値を設定しています。
+  周辺分布が一様分布という制約がある場合には、$`\theta_{|xyz|}`$の値を大きくすると、 $`|x|=|y|=|z|`$ の領域付近に確率が集中します。
 
   ![abs_xyz](img/abs_xyz.png)
 
   ![abs_xyz](img/abs_xyz.gif)
 
   また、“sin:amp”, “sin:freq”, “sin;phase” の３つは、
-  $\theta^{\top}h(x,y,z)$ の中に
-  $A\cdot \sin(2\pi (\phi\cdot\sqrt{x^2+y^2+z^2} + \psi))$
-  という項があるとして、それぞれ、$A$, $\phi$, $\psi$ の値に対応しています。
+  $`\theta^{\top}h(x,y,z)`$ の中に
+  $`A\cdot \sin(2\pi (\phi\cdot\sqrt{x^2+y^2+z^2} + \psi))`$
+  という項があるとして、それぞれ、$`A`$, $`\phi`$, $`\psi`$ の値に対応しています。
 
   ![sin](img/sin.png)
   
@@ -92,7 +92,7 @@ Webアプリは、以下の画像のように、確率関数を描画する部�
 
 - iv) - vi) : グリッドの設定をするスライダー<br />
 
-  iv) "step size" でグリッドの幅を設定できます。初期値は 0.25 に設定されており、この場合、$9^3=729$個の位置の確率関数の値を計算しています。もし、グリッドの幅を 0.1 に設定すると、$21^3=9261$個の確率関数の値を計算することになり、動作がとても遅くなる可能性があります。
+  iv) "step size" でグリッドの幅を設定できます。初期値は 0.25 に設定されており、この場合、$`9^3=729`$個の位置の確率関数の値を計算しています。もし、グリッドの幅を 0.1 に設定すると、$`21^3=9261`$個の確率関数の値を計算することになり、動作がとても遅くなる可能性があります。
 
   ![step_size](img/step_size.gif)
 
@@ -109,8 +109,8 @@ Webアプリは、以下の画像のように、確率関数を描画する部�
 - vii) : 確率関数の観察のための切断面を設定するスライダー<br />
 
   確率関数の中を覗くための切断面を設定するスライダーがあります。
-  例えば、“x <= 0” のように設定すると、$x > 0$の部分が一時的に見えなくなるため、
-  $x=0$ の切断面が観察できます。
+  例えば、“x <= 0” のように設定すると、$`x > 0`$の部分が一時的に見えなくなるため、
+  $`x=0`$ の切断面が観察できます。
 
   ![cross-section](img/cross-section.gif)
 
@@ -179,7 +179,7 @@ Mindemoは、[最小情報従属モデル (Minimum Information Dependence Model)
 
 ## Mindemo2Dについて
 
-[最小情報従属モデル](https://arxiv.org/abs/2206.06792) ([arXiv](https://arxiv.org/abs/2206.06792), [GitHub](https://github.com/kyanostat/min-info)) を用いて構成した2次元の確率分布を可視化する [Mindemo2D](https://github.com/tanaken-basis/mindemo2d) という名前のPythonのプログラムを[こちら](https://github.com/tanaken-basis/mindemo2d)に用意しています。確率分布のパラメータについては、こちらのほうがより細かく設定できます。
+Mindemo ([arXiv](https://arxiv.org/abs/2206.06792), [GitHub](https://github.com/kyanostat/min-info)) を用いて構成した2次元の確率分布を可視化する [Mindemo2D](https://github.com/tanaken-basis/mindemo2d) という名前のPythonのプログラムを[こちら](https://github.com/tanaken-basis/mindemo2d)に用意しています。確率分布のパラメータについては、こちらのほうがより細かく設定できます。
 
 ## ライブラリーについて
 
