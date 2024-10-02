@@ -41,9 +41,9 @@ Webアプリは、以下の画像のように、確率関数を描画する部�
   3次元の場合の Mindemo ([arXiv](https://arxiv.org/abs/2206.06792), [GitHub](https://github.com/kyanostat/min-info)) は、一般的には、
 
   $$p(x, y, z; \theta, \nu) =
-  \exp{\left\{\theta^{\top}h(x,y,z)
+  \exp{\left\lbrace\theta^{\top}h(x,y,z)
   -(a_{x}(x;\theta,\nu)+a_{y}(y;\theta,\nu)+a_{z}(z;\theta,\nu))
-  -\psi(\theta,\nu)\right\}}
+  -\psi(\theta,\nu)\right\rbrace}
   \cdot r_{x}(x;\nu) \cdot r_{y}(y;\nu) \cdot r_{z}(z;\nu)$$
   
   のように表されます。

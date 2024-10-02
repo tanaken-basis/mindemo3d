@@ -36,9 +36,9 @@ This section explains how to view and operate the web application. The web appli
   For [Mindemo](https://arxiv.org/abs/2206.06792) ([arXiv](https://arxiv.org/abs/2206.06792), [GitHub](https://github.com/kyanostat/min-info)) in three dimensions, it is generally expressed as:
   
   $$p(x, y, z; \theta, \nu) =
-  \exp{\left\{\theta^{\top}h(x,y,z)
+  \exp{\left\lbrace\theta^{\top}h(x,y,z)
   -(a_{x}(x;\theta,\nu)+a_{y}(y;\theta,\nu)+a_{z}(z;\theta,\nu))
-  -\psi(\theta,\nu)\right\}}
+  -\psi(\theta,\nu)\right\rbrace}
   \cdot r_{x}(x;\nu) \cdot r_{y}(y;\nu) \cdot r_{z}(z;\nu)$$
 
   Among these terms, $`a_{x}(x;\theta,\nu)`$, $`a_{y}(y;\theta,\nu)`$, $`a_{z}(z;\theta,\nu)`$, and $`\psi(\theta,\nu)`$ are essentially determined automatically. Therefore, by setting $`\theta^{\top}h(x,y,z)`$ and $`r_{x}(x;\nu)`$, $`r_{y}(y;\nu)`$, $`r_{z}(z;\nu)`$, the probability distribution is determined.
