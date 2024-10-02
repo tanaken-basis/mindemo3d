@@ -4,7 +4,8 @@
 
 ## 概要
 
-[最小情報従属モデル](https://arxiv.org/abs/2206.06792)(Minimum Information Dependence Model を略してMindemo, 詳細は[arXiv](https://arxiv.org/abs/2206.06792)と[GitHub](https://github.com/kyanostat/min-info)をご参照ください)を用いて構成した3次元の確率分布を可視化するプログラムです。
+最小情報従属モデル([arXiv](https://arxiv.org/abs/2206.06792), [GitHub](https://github.com/kyanostat/min-info))を用いて構成した3次元の確率分布を可視化するプログラムです。
+最小情報従属モデル(Minimum Information Dependence Model)は、略して Mindemo と呼ばれています。
 
 ## プログラムの使用例
 
