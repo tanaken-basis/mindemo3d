@@ -49,7 +49,8 @@ This section explains how to view and operate the web application. The web appli
 
   You can also manipulate the slider values using your keyboard. For instance, in the “Uniformity” section, the notation [a, A] indicates that pressing “a” decreases the slider value, while pressing “A” increases it.
 
-  The slider in iii) allows you to set the term $`\theta^{\top}h(x,y,z)`$. The term $`\theta^{\top}h(x,y,z)`$ can represent interactions. 
+  The slider in iii) allows you to set the term $`\theta^{\top}h(x,y,z)`$.  
+  The term $`\theta^{\top}h(x,y,z)`$ is the part that can represent the interaction and can include a variety of functions.
   
   For example, the “xy” slider sets the value of $`\theta_{xy}`$, assuming there is an interaction term $`\theta_{xy} \cdot x y`$ within  $`\theta^{\top}h(x,y,z)`$. When there is a constraint that the marginal distribution is a uniform distribution, increasing the value of $`\theta_{xy}`$ concentrates the probability around the region where $`x=y`$.
 

@@ -9,7 +9,7 @@
 
 ## プログラムの使用例
 
-[プログラムの使用例](https://tanaken-basis.github.io/mindemo3d/)をご覧ください。
+[プログラムの使用例(Webアプリ)](https://tanaken-basis.github.io/mindemo3d/)をご覧ください。
 
 [![example of mindemo3d](img/mindemo3d_example.gif)](https://tanaken-basis.github.io/mindemo3d/)
 
@@ -61,7 +61,7 @@ Webアプリは、以下の画像のように、確率関数を描画する部�
   スライダーの値などは、キーボードでも操作できます。
   例えば、Uniformityのところに書いてある [a, A] は、aを押すとスライダーの値が小さくなり、Aを押すとスライダーの値が大きくなる、ということを表します。
 
-  iii)のスライダーでは、$`\theta^{\top}h(x,y,z)`$ の部分を設定できるようにしています。$`\theta^{\top}h(x,y,z)`$は、交互作用を表現することができる部分です。
+  iii)のスライダーでは、$`\theta^{\top}h(x,y,z)`$ の部分を設定できるようにしています。$`\theta^{\top}h(x,y,z)`$は、交互作用を表現することができる部分で、色々な種類の関数を含めることができます。
 
   例えば、“xy” のスライダーは、 $`\theta^{\top}h(x,y,z)`$ の中に $`\theta_{xy} \cdot x y`$ という $`x`$ と $`y`$ の交互作用があるとして、 $`\theta_{xy}`$ の値を設定しています。
   周辺分布が一様分布という制約がある場合には、$`\theta_{xy}`$の値を大きくすると、 $`x=y`$ の領域付近に確率が集中します。
