@@ -100,6 +100,7 @@ This section explains how to view and operate the web application. The web appli
 - viii) Buttons for Resetting, Saving, and Loading the Probability Function
 
   You’ll find buttons that allow you to reset the probability function settings and perform actions like saving and loading.
+  When you click the “Save” button, information related to probability function settings will be saved as a CSV file. The CSV file will also include values for the probability function in each grid. Additionally, by clicking the “Load” button and specifying this CSV file, you can load the saved settings.
 
 - ix) - xiii): Sliders and Checkbox for Visual Settings
 
